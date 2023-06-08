@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { ITEM_WIDTH } from "./CarouselCardItem";
+import { ITEM_WIDTH } from "./CarouselCards";
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',

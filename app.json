@@ -13,7 +13,10 @@
     },
     "extra": {
       "API_URL": "https://example.com/api",
-      "API_KEY": "abc123"
+      "API_KEY": "abc123",
+      "eas": {
+        "projectId": "93b5dc41-43a6-4bb0-a463-172be003c6dc"
+      }
     },
     "assetBundlePatterns": [
       "**/*"
@@ -23,9 +26,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.moaub.Solar"
     },
     "web": {
       "favicon": "./assets/favicon.png"

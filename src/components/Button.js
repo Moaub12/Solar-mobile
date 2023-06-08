@@ -22,10 +22,12 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
     paddingVertical: 2,
-  },
+    backgroundColor:'#32C36C',
+       },
   text: {
     fontWeight: 'bold',
     fontSize: 15,
     lineHeight: 26,
+    color:"white",
   },
 })
