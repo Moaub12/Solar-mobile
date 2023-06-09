@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, Dimensions, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Dimensions, Image, StyleSheet, TouchableOpacity,TouchableHighlight } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Button from '../components/Button';
 
 import { useSelector, useDispatch } from 'react-redux';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8); // Adjust the item width as per your preference
+const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8); 
 
-const ServiceCarousel = ({data}) => {
+const ServiceCarousel = ({data,button}) => {
   const [index, setIndex] = useState(0);
   
  
@@ -25,19 +25,29 @@ const ServiceCarousel = ({data}) => {
     };
 
     return (
-      <TouchableOpacity style={styles.container} onPress={handleCardPress}>
-        <Image source={item.imgPath} style={styles.image} />
-        <Text style={styles.header}>{item.title}</Text>
-        <Text style={styles.body}>{item.body}</Text>
-        
-        {showButton && (
-          <Button
-            
-            onPress={handleButtonClick}
-            style={styles.button}
-          > book</Button>
-        )}
-      </TouchableOpacity>
+      <View >
+  <TouchableHighlight style={styles.container}  underlayColor="transparent" onPress={handleCardPress}>
+
+      <>
+{/* <TouchableOpacity style={styles.container} onPress={handleCardPress} > */}
+     <Image source={item.imgPath} style={styles.image} />
+     <Text style={styles.header}>{item.title}</Text>
+     <Text style={styles.body}>{item.body}</Text>
+     {
+       button &&  showButton &&  (
+         <Button
+           
+           onPress={handleButtonClick}
+           style={styles.button}
+         > book</Button>
+        )
+     }
+     </>
+
+ 
+</TouchableHighlight>
+      </View>
+      
     );
   };
 

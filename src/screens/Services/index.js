@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
-import ServiceCarousel from "../components/ServiceCarousel";
-import data from "../appIntro/data"; 
+import ServiceCarousel from "../../components/ServiceCarousel";
+import data from "../../appIntro/data"; 
 
 const Services = () => {
   return (
@@ -9,15 +9,15 @@ const Services = () => {
       <View style={styles.titleContainer }>
         <Text style={styles.title}>Installation</Text>
       </View>
-      <ServiceCarousel data={data} />
+      <ServiceCarousel data={data} button={true} />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>After Sale</Text>
       </View>
-      <ServiceCarousel data={data} />
+      <ServiceCarousel data={data}  button={true}/>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Upgrade</Text>
       </View>
-      <ServiceCarousel data={data} />
+      <ServiceCarousel data={data}  button={true}/>
     </ScrollView>
   );
 };

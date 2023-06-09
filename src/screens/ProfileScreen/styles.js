@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
     },
     title:{
    fontSize:20,
+   padding:10,
     },
     button:{
         marginVertical:10,
-        
+        width:"auto",   
         
     },
 })

@@ -21,6 +21,9 @@ const ProfileScreen = ({navigation}) => {
 const NavigateToAboutUS=()=>{
   navigation.navigate('AboutUS')
 }
+const NavigateToMyAccount=()=>{
+
+}
   
   const RenderInfoSection=()=>{return(
     <View style={styles.infoSection}>
@@ -38,17 +41,19 @@ const NavigateToAboutUS=()=>{
     <View style={styles.button}>
       <View style={styles.iconTitleWraper}>
       <MaterialCommunityIcons name={iconName} style={styles.icon} color="#32C36C"/>
+      <Text style={styles.title}>{title}</Text>
       <TouchableOpacity onPress={onPress}> 
-        <Text style={styles.title}>{title}</Text>
+      
+        <MaterialCommunityIcons name="arrow-right" size={30} color="#32C36C" style={{marginLeft:'auto',padding:10,}} />
           </TouchableOpacity>
      
       </View>
-      <View style={styles.horizontalLine}></View>
+      {/* <View style={styles.horizontalLine}></View> */}
     </View>
    ) 
   }
   const RenderButtonsSection=()=>{return(<View style={{marginTop:100,marginLeft:5,}}>
-    {renderutton("account-circle","My Account",Logout)}
+    {renderutton("account-circle","My Account",NavigateToMyAccount)}
     {renderutton("bookmark-multiple","My appointements",NavigateToAppointement)}
     {renderutton("information-outline","AboutUs",NavigateToAboutUS)}
     {renderutton("logout","Logout",Logout)}

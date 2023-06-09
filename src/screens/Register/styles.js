@@ -16,11 +16,19 @@ const styles = StyleSheet.create({
     row: {
       flexDirection: 'row',
       marginTop: 4,
+      justifyContent:'space-around',
     },
     link: {
       fontWeight: 'bold',
       color: '#32C36C',
+      padding:5,
     },
+    text:{
+      padding:5,
+    },
+    localtextinput:{
+      height:40
+    }
   }); 
   export default styles;
   
