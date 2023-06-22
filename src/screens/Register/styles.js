@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { color } from "../../theme";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     },
     link: {
       fontWeight: 'bold',
-      color: '#32C36C',
+      color:color,
       padding:5,
     },
     text:{

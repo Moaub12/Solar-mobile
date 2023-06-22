@@ -1,23 +1,31 @@
 import axios from "axios";
+import store from "../redux/store"; 
 
 const api = axios.create({
-    baseURL: "http://localhost:8000/",
-    headers: {
-        "Content-Type": "application/json"
-    }
+  baseURL: "https://server-pes9.onrender.com/",
+  headers: {
+    "Content-Type": "application/json"
+  }
 });
 
+const getAccessToken = () => {
+  const state = store.getState();
+  return state.app.token;
+};
 
-api.interceptors.request.use((config) => {
-    const accessToken = localStorage.getItem('accessToken');
-
-    if (accessToken) {
-        config.headers['Authorization'] = `Bearer ${accessToken}`;
-    }
-
-    return config;
-}, (error => {
+api.interceptors.request.use(async (config) => {
+  const accessToken = getAccessToken();
+  if (accessToken) {
+ 
+  // console.log(accessToken)
+    config.headers.Authorization = `Bearer ${accessToken}`;
+  }
+  return config;
+}
+,
+  (error) => {
     return Promise.reject(error);
-}));
+  });
 
 export default api;
+

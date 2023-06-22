@@ -11,6 +11,7 @@ import { emailValidator } from '../../helpers/emailValidator';
 import { passwordValidator } from '../../helpers/passwordValidator';
 import api from '../../Services/axiosInst';
 import styles from './styles';
+import jwtDecode from 'jwt-decode';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
@@ -28,10 +29,18 @@ const Login = ({ navigation }) => {
     } else {
       const verifiedemail = email.value;
       const verifiedpassword = password.value;
-      console.log(verifiedemail, verifiedpassword);
-      // const response = await api.post('api/token/',{username:verifiedemail,password:verifiedpassword});
-      // if(response)
-      dispatch(authenticate({ loggedIn: true }));
+      try{
+        const response = await api.post('api/token/', { username: verifiedemail, password: verifiedpassword })
+        if(response.status===200) {
+           dispatch(authenticate({ loggedIn: true,username:jwtDecode(response.data.access).username,token:response.data.access}));
+         }
+
+      } catch(error){
+        setPassword({...password,error:"Unvalid username or password"})
+        console.log(error)
+      }
+     
+      
     }
   };
 

@@ -3,16 +3,20 @@ import { View, Text,TouchableOpacity} from "react-native";
 import Button from "../../components/Button"
 import { useSelector, useDispatch } from "react-redux";
 import { authenticate } from "../../redux/slices/app.slice";
-import Background from "../../components/Background";
+import{color}  from "../../theme";
 import styles from "./styles";
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { onPress } from "deprecated-react-native-prop-types/DeprecatedTextPropTypes";
+
 const ProfileScreen = ({navigation}) => {
   const dispatch = useDispatch();
   
+  
+  const username= useSelector((state) => state.app.username)
+  
   const Logout=()=>{
-    dispatch(authenticate({ loggedIn: false }));
+    dispatch(authenticate({ loggedIn: false,username:{} }));
+
   }
   const NavigateToAppointement=()=>{
    
@@ -28,23 +32,23 @@ const NavigateToMyAccount=()=>{
   const RenderInfoSection=()=>{return(
     <View style={styles.infoSection}>
     
-    <Ionicons name="person" size={60} color="#32C36C"  />
+    <Ionicons name="person" size={60} color={color}  />
     <View style={styles.verticalLine}></View>
     <View>
       <Text style={styles.name}>Mohamad Ayoubi</Text>
-      <Text >@username</Text>
+      <Text >@{username}</Text>
     </View>
   </View>
     )}
   const renderutton=(iconName,title,onPress)=>{
-   return(
+   return( 
     <View style={styles.button}>
       <View style={styles.iconTitleWraper}>
-      <MaterialCommunityIcons name={iconName} style={styles.icon} color="#32C36C"/>
+      <MaterialCommunityIcons name={iconName} style={styles.icon} color={color}/>
       <Text style={styles.title}>{title}</Text>
       <TouchableOpacity onPress={onPress}> 
       
-        <MaterialCommunityIcons name="arrow-right" size={30} color="#32C36C" style={{marginLeft:'auto',padding:10,}} />
+        <MaterialCommunityIcons name="arrow-right" size={30} color={color} style={{marginLeft:'auto',padding:10,}} />
           </TouchableOpacity>
      
       </View>

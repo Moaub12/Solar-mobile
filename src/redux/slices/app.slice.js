@@ -1,16 +1,20 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 
+
 // ------------------------------------
 // Constants
 // ------------------------------------
 
 const initialState = {
-  checked: false,
+  
   loggedIn: false,
   firstTime:true,
-  aboutBody:"Solar AI is a company providing solar pannels sytem services.We use AI technology to make the user experience better ",
-  me: {},
+  aboutBody:"SunWise is a company providing solar pannels sytem services.We use AI technology to make the user experience better ",
+  name:{},
+  username:{},
+  token:''
+  
 }
 
 // ------------------------------------
@@ -23,7 +27,8 @@ const appSlice = createSlice({
   reducers: {
     authenticate: (state, { payload }) => {
       state.loggedIn = payload.loggedIn
-      state.checked = payload.checked
+      state.username=payload.username
+      state.token=payload.token
     },
     saveMe: (state, { payload }) => {
       // console.log('------me saved', { me: payload.me })

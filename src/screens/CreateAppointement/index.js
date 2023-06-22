@@ -4,7 +4,7 @@ import BackButton from "../../components/BackButton";
 import { Calendar } from "react-native-calendars";
 import styles from "./styles";
 import { color } from "../../theme";
-const MyAppointment = ({ navigation }) => {
+const CreateAppointment = ({ navigation }) => {
   const navigatetoprofile = () => {
     navigation.navigate("ProfileScreen");
   };
@@ -67,4 +67,4 @@ const MyAppointment = ({ navigation }) => {
     </View>
   );
 };
-export default MyAppointment;
+export default CreateAppointment;

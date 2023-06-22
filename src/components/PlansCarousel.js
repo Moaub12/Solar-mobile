@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8); 
 
-const ServiceCarousel = ({data}) => {
+const PlansCarousel = ({data,onClick}) => {
   const [index, setIndex] = useState(0);
   
  
@@ -30,10 +30,18 @@ const ServiceCarousel = ({data}) => {
 
       <>
  
-     <Image source={item.imgPath} style={styles.image} />
-     <Text style={styles.header}>{item.title}</Text>
-     <Text style={styles.body}>{item.body}</Text>
-    
+     <Image source={{uri:item.image}} style={styles.image} />
+     <Text style={styles.header}>{item.name}</Text>
+     <Text style={styles.body}>{item.description}</Text>
+     {
+       showButton &&  (
+         <Button
+           
+           onPress={handleButtonClick}
+           style={styles.button}
+         > book</Button>
+        )
+     }
      </>
 
  
@@ -106,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ServiceCarousel;
+export default PlansCarousel;

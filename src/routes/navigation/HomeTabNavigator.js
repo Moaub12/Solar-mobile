@@ -1,11 +1,12 @@
 
 import Home from '../../screens/Home';
 import ProfileStackNavigator from './ProfileStackNavigator';
-import Services from '../../screens/Services';
+import ServicesStackNavigator from './ServicesStackNavigator';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // solar-power
+import { color } from '../../theme';
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigator = () => {
@@ -47,7 +48,7 @@ const HomeTabNavigator = () => {
             
           />
         ),
-        tabBarActiveTintColor: "#32C36C",
+        tabBarActiveTintColor:color,
         tabBarInactiveTintColor: "gray",
         tabBarStyle: [
           {
@@ -58,7 +59,7 @@ const HomeTabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Services" component={Services} />
+      <Tab.Screen name="Services" component={ServicesStackNavigator} />
       <Tab.Screen name="Profile" component={ProfileStackNavigator} />
     </Tab.Navigator>
   );

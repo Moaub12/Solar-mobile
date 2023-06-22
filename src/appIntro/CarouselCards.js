@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import { View, Text, Dimensions, Image, StyleSheet } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import Button from '../components/Button';
-import data from './data';
+import data from '../../assets/AppIntro/data';
 import { useSelector, useDispatch } from 'react-redux';
 import { firstLog } from '../redux/slices/app.slice';
-
+import { color } from '../theme';
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 
@@ -68,9 +68,9 @@ const CarouselCards = () => {
         mode="contained"
         disabled={!enable}
         onPress={nav}
-        style={{ backgroundColor: '#32C36C' }}
+        style={{ backgroundColor:color }}
       >
-        next
+        Get Started
       </Button>
     </View>
   );

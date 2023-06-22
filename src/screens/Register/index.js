@@ -16,8 +16,7 @@ export default function Register() {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
   const [repeatPassword, setRepeatPassword] = useState({ value: '', error: '' });
-  const [Phone,setPhone]=useState("")
-  const [Username,setUsername]=useState("");
+  const [userName,setUserName]=useState("")
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
     const emailError = emailValidator(email.value);
@@ -47,14 +46,6 @@ export default function Register() {
             onChangeText={(text) => setName({ value: text, error: '' })}
             error={!!name.error}
             errorText={name.error}
-            style={styles.localtextinput}
-          />
-           <TextInput
-            label="username"
-            returnKeyType="next"
-            value={Username}
-            onChangeText={(username) =>setUsername(username)}
-            style={styles.localtextinput}
           />
           <TextInput
             label="Email"
@@ -67,31 +58,13 @@ export default function Register() {
             autoCompleteType="email"
             textContentType="emailAddress"
             keyboardType="email-address"
-            style={styles.localtextinput}
           />
            <TextInput
-            label="phone"
+            label="username"
             returnKeyType="next"
-            value={Phone}
-            onChangeText={(phone) =>{setPhone(phone)} }
-            keyboardType="phone-pad"
-            style={styles.localtextinput}
-          />
-          <TextInput
-            label="phone"
-            returnKeyType="next"
-            value={Phone}
-            onChangeText={(phone) =>{setPhone(phone)} }
-            keyboardType="phone-pad"
-            style={styles.localtextinput}
-          />
-          <TextInput
-            label="phone"
-            returnKeyType="next"
-            value={Phone}
-            onChangeText={(phone) =>{setPhone(phone)} }
-            keyboardType="phone-pad"
-            style={styles.localtextinput}
+            value={userName}
+            onChangeText={(username) =>{setUserName(username)} }
+       
           />
           <TextInput
             label="Password"
@@ -101,7 +74,6 @@ export default function Register() {
             error={!!password.error}
             errorText={password.error}
             secureTextEntry
-            style={styles.localtextinput}
           />
           <TextInput
             label="Repeat Password"
@@ -111,7 +83,6 @@ export default function Register() {
             error={!!repeatPassword.error}
             errorText={repeatPassword.error}
             secureTextEntry
-            style={styles.localtextinput}
           />
           <Button mode="contained" onPress={onSignUpPressed} style={styles.button}>
             Sign Up

@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-sunai.png",
+      "image": "./assets/splash-sunwise.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
