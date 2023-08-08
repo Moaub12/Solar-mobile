@@ -15,7 +15,7 @@ const ProfileScreen = ({navigation}) => {
   const username= useSelector((state) => state.app.username)
   
   const Logout=()=>{
-    dispatch(authenticate({ loggedIn: false,username:{} }));
+    dispatch(authenticate({ loggedIn: false,username:{},token:'' }));
 
   }
   const NavigateToAppointement=()=>{

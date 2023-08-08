@@ -4,6 +4,7 @@ const accessToken = store.getState().app.token;
 const getPlans=async ()=>{
     try{
         const response = await api.get(`api/plans/`);
+        
         return response.data;
     }
   catch(error){

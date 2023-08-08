@@ -38,6 +38,15 @@ container: {
     fontSize: 16,
     marginBottom: 8,
   },
+  buttonContainer: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  buttons: {
+    flexDirection: "row",
+    marginTop: 10,
+  },
+
   
 });
 

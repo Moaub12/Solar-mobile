@@ -29,7 +29,8 @@ const Login = ({ navigation }) => {
     } else {
       const verifiedemail = email.value;
       const verifiedpassword = password.value;
-      try{
+
+      try{ 
         const response = await api.post('api/token/', { username: verifiedemail, password: verifiedpassword })
         if(response.status===200) {
            dispatch(authenticate({ loggedIn: true,username:jwtDecode(response.data.access).username,token:response.data.access}));

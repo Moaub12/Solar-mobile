@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8); 
+const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.95); 
 
 const PlansCarousel = ({data,onClick}) => {
   const [index, setIndex] = useState(0);
@@ -21,7 +21,7 @@ const PlansCarousel = ({data,onClick}) => {
     };
 
     const handleButtonClick = () => {
-     onClick()
+     onClick(item)
     };
 
     return (

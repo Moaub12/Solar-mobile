@@ -1,21 +1,19 @@
 {
   "expo": {
-    "name": "Solar",
-    "slug": "Solar",
+    "name": "SunWise",
+    "slug": "SunWise",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash-sunwise.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "extra": {
-      "API_URL": "https://example.com/api",
-      "API_KEY": "abc123",
       "eas": {
-        "projectId": "93b5dc41-43a6-4bb0-a463-172be003c6dc"
+        "projectId": "86935f3d-f72b-452d-8cfc-65e095c643c3"
       }
     },
     "assetBundlePatterns": [

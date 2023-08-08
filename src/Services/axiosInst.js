@@ -16,8 +16,7 @@ const getAccessToken = () => {
 api.interceptors.request.use(async (config) => {
   const accessToken = getAccessToken();
   if (accessToken) {
- 
-  // console.log(accessToken)
+  
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
   return config;
